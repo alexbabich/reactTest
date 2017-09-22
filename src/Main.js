@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 
-const urlForData = login => `https://api.github.com/users/${login}`
+const allUser = 'https://api.github.com/users';
 
 class Main extends Component {
     constructor() {
         super();
-        this.state = {};
+        this.state = {users: []};
     }
 
     componentDidMount() {
-        fetch(urlForData(this.props.login))
+        fetch(allUser)
             .then(d => d.json())
             .then(d => {
                     this.setState({
@@ -20,10 +20,14 @@ class Main extends Component {
     }
 
     render() {
-        if(!this.state.users) return <p>Loading.......</p>
+        const todoItems = this.state.users.map((todo) =>
+            <li key={todo.id}>
+                {todo.login}
+            </li>
+        );
         return (
             <div>
-                <h2>{this.state.users.html_url}</h2>
+                {todoItems}
             </div>
         );
     }

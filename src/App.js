@@ -9,7 +9,7 @@ class App extends Component {
         <div className="App-header">
           <h2>Welcome to React</h2>
         </div>
-          <Main login="mojombo"></Main>
+          <Main userid="1"></Main>
       </div>
 
     );
