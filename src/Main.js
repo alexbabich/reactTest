@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+// import { Link, Router, Route, IndexRoute, browserHistory } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 const allUser = 'https://api.github.com/users';
 
@@ -21,13 +23,21 @@ class Main extends Component {
 
     render() {
         const todoItems = this.state.users.map((todo) =>
-            <li key={todo.id}>
-                {todo.login}
+            <li className="col-md-6 userItem" key={todo.id}>
+                <Link to={`/${todo.id}`}>
+                    <div>
+                        <img className="userPhoto" src={todo.avatar_url} alt={todo.login} />
+                        <div className="userInformation">
+                            <p><span>User login:</span> {todo.login}</p>
+                            <p><span>Profile link:</span> {todo.html_url}</p>
+                        </div>
+                    </div>
+                </Link>
             </li>
         );
         return (
-            <div>
-                {todoItems}
+            <div className="row">
+                <ul className="col-md-12 list-unstyled">{todoItems}</ul>
             </div>
         );
     }

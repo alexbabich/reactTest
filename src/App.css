@@ -1,11 +1,27 @@
-.App {
-  text-align: center; }
-
-.App-header {
-  background-color: #222;
-  height: auto;
-  padding: 20px;
-  color: white; }
-
-.App-intro {
-  font-size: large; }
+.userItem {
+  text-align: left;
+  margin: 20px 0; }
+  .userItem .userInformation {
+    display: inline-block;
+    vertical-align: top; }
+  .userItem img {
+    max-width: 100px;
+    max-height: 100px;
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 15px;
+    -webkit-box-shadow: 0 0 6px 4px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 0 6px 4px rgba(0, 0, 0, 0.05);
+    border-radius: 100%; }
+  .userItem p span {
+    font-weight: bold;
+    font-size: 16px; }
+  .userItem:hover img {
+    -webkit-box-shadow: 0 0 6px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 0 6px 4px rgba(0, 0, 0, 0.25); }
+  .userItem.mainInfo img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none; }
